@@ -128,13 +128,25 @@ fn prompt() -> Link {
 
 /// Output the link's info to a TOML file.
 fn output(lnk: Link, dir: &str) {
+    let safe_title = lnk.title.replace('/', "_");
+    let safe_title = safe_title.replace('\\', "_");
+    let safe_title = safe_title.replace(':', "_");
+    let safe_title = safe_title.replace('*', "_");
+    let safe_title = safe_title.replace('?', "_");
+    let safe_title = safe_title.replace('"', "_");
+    let safe_title = safe_title.replace('<', "_");
+    let safe_title = safe_title.replace('>', "_");
+    let safe_title = safe_title.replace('|', "_");
+
     let mut text: String = format!(
-        "[{title}]
+        "[{safe_title}]
+title = \"{title}\"
 link = \"{link}\"
 desc = \"{desc}\"
 added = \"{added}\"
 accessed = \"{accessed}\"
 ",
+        safe_title = safe_title,
         title = lnk.title,
         link = lnk.link,
         desc = lnk.desc,
@@ -145,7 +157,7 @@ accessed = \"{accessed}\"
         text += &format!("tags = [{}]", format_tags(tags));
     }
     // print!("Got: {}", text);
-    fs::write(format!("{}/{}.toml", dir, lnk.title), text).expect("Unable to write file");
+    fs::write(format!("{}/{}.toml", dir, safe_title), text).expect("Unable to write file");
 }
 
 fn main() -> std::io::Result<()> {
