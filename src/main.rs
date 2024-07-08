@@ -1,16 +1,9 @@
-use chrono;
-use chrono::serde::ts_seconds_option;
 use chrono::NaiveDate;
-use serde::{ser::SerializeStruct, Deserialize, Serialize, Serializer};
-use serde_with::{DeserializeFromStr, SerializeDisplay};
+use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use std::env;
 use std::fs;
 use std::path::PathBuf;
-// use text_io::read;
-use inquire;
-use toml::value::Date;
-use toml_datetime;
 
 /// A link to an educational resource.
 /// # Fields

@@ -8,6 +8,5 @@ chrono = { version = "0.4.38", features = ["serde"] }
 inquire = "0.7.5"
 serde = { version = "1.0.203", features = ["derive"] }
 serde_with = "3.8.3"
-# text_io = "0.1.12"
 toml = "0.8.14"
 toml_datetime = "0.6.6"
