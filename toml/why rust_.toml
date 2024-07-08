@@ -1,0 +1,7 @@
+[why rust_]
+title = "Why Rust?"
+link = "https://github.com/smallnest/concurrency-programming-via-rust"
+desc = " C++ programmer Emil Ernerfeldt's perspective on embracing Rust at his company."
+added = "2024-07-08"
+accessed = "2024-07-08"
+tags = ["blog", "c++"]

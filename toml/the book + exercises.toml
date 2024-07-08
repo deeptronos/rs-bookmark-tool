@@ -1,0 +1,7 @@
+[the book + exercises]
+title = "The Book + Exercises"
+link = " https://rust-book.cs.brown.edu/"
+desc = "Brown University's instance of the famous Rust Book adds interactive quizzes and modified explanations."
+added = "2024-07-08"
+accessed = "2024-07-08"
+tags = ["quiz", "edu", "official"]
