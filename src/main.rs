@@ -137,6 +137,7 @@ fn output(lnk: Link, dir: &str) {
     let safe_title = safe_title.replace('<', "_");
     let safe_title = safe_title.replace('>', "_");
     let safe_title = safe_title.replace('|', "_");
+    let safe_title = safe_title.to_lowercase();
 
     let mut text: String = format!(
         "[{safe_title}]
