@@ -1,0 +1,7 @@
+[rust formal methods interest group_ tools (2021)]
+title = "Rust Formal Methods Interest Group: Tools (2021)"
+link = "https://rust-formal-methods.github.io/tools.html"
+desc = "A guide to Rust verification tools for ensuring code safety and correctness"
+added = "2024-07-12"
+accessed = "2024-07-12"
+tags = ["free", "book"]

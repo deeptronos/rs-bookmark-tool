@@ -1,0 +1,7 @@
+[rust for haskhell developers]
+title = "Rust for Haskhell Developers"
+link = "https://serokell.io/blog/rust-for-haskellers"
+desc = "Provides a detailed comparison of Rust and Haskell, explaining how Rust's design has been influenced by functional programming principles and how Haskell developers can leverage their knowledge to write idiomatic Rust code"
+added = "2024-07-12"
+accessed = "2024-07-12"
+tags = ["blog"]

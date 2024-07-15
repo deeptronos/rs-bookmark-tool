@@ -1,0 +1,7 @@
+[safely writing code that isn't thread-safe]
+title = "Safely writing code that isn't thread-safe"
+link = "https://cliffle.com/blog/not-thread-safe/"
+desc = "An introduction to writing non-thread-safe code within the safety features Rust enables."
+added = "2024-07-10"
+accessed = "2024-07-10"
+tags = ["safety", "concurrency", "async", "send"]

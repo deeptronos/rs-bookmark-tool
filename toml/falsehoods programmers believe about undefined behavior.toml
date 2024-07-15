@@ -1,0 +1,7 @@
+[falsehoods programmers believe about undefined behavior]
+title = "Falsehoods programmers believe about undefined behavior"
+link = "https://predr.ag/blog/falsehoods-programmers-believe-about-undefined-behavior/"
+desc = "Debunks myths about unsafe code regardless of language, and emphasizes the safety features enabled by safe Rust."
+added = "2024-07-10"
+accessed = "2024-07-10"
+tags = ["safety", "c++"]

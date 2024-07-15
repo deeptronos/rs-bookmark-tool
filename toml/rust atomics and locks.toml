@@ -1,0 +1,7 @@
+[rust atomics and locks]
+title = "Rust Atomics and Locks"
+link = "https://marabos.nl/atomics/"
+desc = "A practical guide for Rust programmers of all levels to gain an understanding of low-level concurrency, including atomics, memory ordering, and building common concurrency primitives."
+added = "2024-07-12"
+accessed = "2024-07-12"
+tags = ["concurrency", "book"]

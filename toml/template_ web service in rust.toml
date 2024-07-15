@@ -1,0 +1,7 @@
+[template_ web service in rust]
+title = "Template: Web Service in Rust"
+link = "https://github.com/stoically/web-service-rs-template"
+desc = "A template for developing a modern web service using Rust crates"
+added = "2024-07-10"
+accessed = "2024-07-10"
+tags = ["template", "web", "code"]

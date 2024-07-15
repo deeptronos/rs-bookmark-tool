@@ -1,0 +1,7 @@
+[lifetimekata]
+title = "LifetimeKata"
+link = "https://tfpk.github.io/lifetimekata/index.html"
+desc = "A series of exercises to help learn Rust lifetimes"
+added = "2024-07-12"
+accessed = "2024-07-12"
+tags = ["free", "exercises"]

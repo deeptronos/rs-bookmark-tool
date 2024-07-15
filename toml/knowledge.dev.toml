@@ -1,0 +1,7 @@
+[knowledge.dev]
+title = "Knowledge.Dev"
+link = "https://knowledge.dev/"
+desc = "Offers interactive, step-by-step lessions to help users master idiomatic Rust programming, with weekly updates and a fully-featured local coding environment"
+added = "2024-07-12"
+accessed = "2024-07-12"
+tags = ["edu", "paid"]

@@ -1,0 +1,7 @@
+[making a _-sys crate]
+title = "Making a *-sys crate"
+link = "https://kornel.ski/rust-sys-crate"
+desc = "A detailed guide on how to create a Rust sys crate to interface with C libraries"
+added = "2024-07-12"
+accessed = "2024-07-12"
+tags = ["c", "crates"]

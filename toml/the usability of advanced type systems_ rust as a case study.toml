@@ -1,0 +1,7 @@
+[the usability of advanced type systems_ rust as a case study]
+title = "The Usability of Advanced Type Systems: Rust as a Case Study"
+link = "https://arxiv.org/pdf/2301.02308"
+desc = "This academic paper examines the usability challenges of Rust's type system, particularly its ownership and lifetime rules, and calls on recent research to understand how these features impact learning and adoption of the language."
+added = "2024-07-12"
+accessed = "2024-07-12"
+tags = ["paper", "edu"]
