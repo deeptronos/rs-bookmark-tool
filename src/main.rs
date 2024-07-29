@@ -1,5 +1,7 @@
 use chrono::NaiveDate;
 use serde::{Deserialize, Serialize};
+use unidecode::unidecode;
+
 use std::collections::HashSet;
 use std::env;
 use std::ffi::OsStr;
@@ -129,7 +131,8 @@ fn prompt() -> Link {
 
 /// Output the link's info to a TOML file.
 fn output(lnk: Link, dir: &str) {
-    let safe_title = lnk.title.replace('/', "_");
+    let safe_title = unidecode(&lnk.title);
+    let safe_title = safe_title.replace('/', "_");
     let safe_title = safe_title.replace('\\', "_");
     let safe_title = safe_title.replace(':', "_");
     let safe_title = safe_title.replace('*', "_");
@@ -178,11 +181,12 @@ fn fix_headers(dir: &str) -> std::io::Result<()> {
             for line in content.lines() {
                 if line.starts_with('[') && line.ends_with(']') {
                     let header = &line[1..line.len() - 1];
-                    let safe_header = header.replace(' ', "_");
+                    let safe_header = unidecode(header);
+                    let safe_header = safe_header.replace(' ', "_");
                     let safe_header = safe_header.replace("'", "_");
+                    let safe_header = safe_header.replace('"', "_");
                     let safe_header = safe_header.replace('(', "");
                     let safe_header = safe_header.replace(')', "");
-                    
                     new_content.push_str(&format!("[{}]\n", safe_header));
                 } else {
                     new_content.push_str(line);
