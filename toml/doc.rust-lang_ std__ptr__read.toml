@@ -1,4 +1,4 @@
-[doc.rust-lang_ std__ptr__read]
+[doc.rust-lang__std__ptr__read]
 title = "Doc.Rust-Lang: std::ptr::read"
 link = "https://doc.rust-lang.org/std/ptr/fn.read.html"
 desc = "Describes the std::ptr::read() function in the standard library, which allows you to safely read the value at a given pointer without modifying the underlying memory"

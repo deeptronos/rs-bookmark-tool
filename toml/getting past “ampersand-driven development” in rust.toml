@@ -1,4 +1,4 @@
-[getting past “ampersand-driven development” in rust]
+[getting_past_“ampersand-driven_development”_in_rust]
 title = "Getting Past “Ampersand-Driven Development” in Rust"
 link = "https://fiberplane.com/blog/getting-past-ampersand-driven-development-in-rust"
 desc = "A blog post providing a mental mody for help new Rust programmers understand the concepts of references, mutable references, owned values, and reference-counted pointers."

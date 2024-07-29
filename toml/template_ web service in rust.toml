@@ -1,4 +1,4 @@
-[template_ web service in rust]
+[template__web_service_in_rust]
 title = "Template: Web Service in Rust"
 link = "https://github.com/stoically/web-service-rs-template"
 desc = "A template for developing a modern web service using Rust crates"

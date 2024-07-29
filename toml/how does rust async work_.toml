@@ -1,4 +1,4 @@
-[how does rust async work_]
+[how_does_rust_async_work_]
 title = "How does Rust async work?"
 link = "http://aidancully.blogspot.com/2022/08/how-does-rust-async-work.html"
 desc = "Explores how Rust async/await infrastructure works at the machine-code level."

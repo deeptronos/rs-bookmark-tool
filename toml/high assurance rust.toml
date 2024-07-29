@@ -1,4 +1,4 @@
-[high assurance rust]
+[high_assurance_rust]
 title = "High Assurance Rust"
 link = "https://highassurance.rs/"
 desc = "Provides an introduction to building performant software that we can trust. (WIP)"

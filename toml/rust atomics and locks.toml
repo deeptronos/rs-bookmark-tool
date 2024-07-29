@@ -1,4 +1,4 @@
-[rust atomics and locks]
+[rust_atomics_and_locks]
 title = "Rust Atomics and Locks"
 link = "https://marabos.nl/atomics/"
 desc = "A practical guide for Rust programmers of all levels to gain an understanding of low-level concurrency, including atomics, memory ordering, and building common concurrency primitives."

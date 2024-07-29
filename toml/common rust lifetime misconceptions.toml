@@ -1,4 +1,4 @@
-[common rust lifetime misconceptions]
+[common_rust_lifetime_misconceptions]
 title = "Common Rust Lifetime Misconceptions"
 link = "https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md"
 desc = "Provides an in-depth exploration of common misunderstandings around lifetimes in Rust."

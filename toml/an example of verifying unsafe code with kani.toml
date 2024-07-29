@@ -1,4 +1,4 @@
-[an example of verifying unsafe code with kani]
+[an_example_of_verifying_unsafe_code_with_kani]
 title = "An Example of Verifying Unsafe Code with Kani"
 link = "https://www.reddit.com/r/KaniRustVerifier/comments/11q21xr/an_example_of_verifying_unsafe_code_with_kani/"
 desc = "An example of using the Kani verification tool to prove the absence of integer overflow in an unsafe Rust function that bypasses overflow checks."

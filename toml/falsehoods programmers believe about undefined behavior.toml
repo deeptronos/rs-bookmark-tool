@@ -1,4 +1,4 @@
-[falsehoods programmers believe about undefined behavior]
+[falsehoods_programmers_believe_about_undefined_behavior]
 title = "Falsehoods programmers believe about undefined behavior"
 link = "https://predr.ag/blog/falsehoods-programmers-believe-about-undefined-behavior/"
 desc = "Debunks myths about unsafe code regardless of language, and emphasizes the safety features enabled by safe Rust."

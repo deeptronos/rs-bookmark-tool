@@ -2,6 +2,7 @@ use chrono::NaiveDate;
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use std::env;
+use std::ffi::OsStr;
 use std::fs;
 use std::path::PathBuf;
 
@@ -137,6 +138,9 @@ fn output(lnk: Link, dir: &str) {
     let safe_title = safe_title.replace('<', "_");
     let safe_title = safe_title.replace('>', "_");
     let safe_title = safe_title.replace('|', "_");
+    let safe_title = safe_title.replace(' ', "_");
+    let safe_title = safe_title.replace('(', "_");
+    let safe_title = safe_title.replace(')', "_");
     let safe_title = safe_title.to_lowercase();
 
     let mut text: String = format!(
@@ -161,6 +165,38 @@ accessed = \"{accessed}\"
     fs::write(format!("{}/{}.toml", dir, safe_title), text).expect("Unable to write file");
 }
 
+/// Fix an issue where many link TOMLs had headers with invalid characters (mostly, spaces)
+fn fix_headers(dir: &str) -> std::io::Result<()> {
+    let entries = fs::read_dir(dir)?;
+
+    for entry in entries {
+        let entry = entry?;
+        let path = entry.path();
+        if path.is_file() && path.extension().and_then(OsStr::to_str) == Some("toml") {
+            let content = fs::read_to_string(&path)?;
+            let mut new_content = String::new();
+            for line in content.lines() {
+                if line.starts_with('[') && line.ends_with(']') {
+                    let header = &line[1..line.len() - 1];
+                    let safe_header = header.replace(' ', "_");
+                    let safe_header = safe_header.replace("'", "_");
+                    let safe_header = safe_header.replace('(', "");
+                    let safe_header = safe_header.replace(')', "");
+                    
+                    new_content.push_str(&format!("[{}]\n", safe_header));
+                } else {
+                    new_content.push_str(line);
+                    new_content.push('\n');
+                }
+            }
+            fs::write(&path, new_content)?;
+    
+    
+            }
+    }
+    Ok(())
+}
+
 fn main() -> std::io::Result<()> {
     let toml_directory = "/toml";
     let cwd: PathBuf = env::current_dir()?;
@@ -175,20 +211,23 @@ fn main() -> std::io::Result<()> {
         println!("Found existing directory at {}.", &toml_path)
     }
 
-    loop {
-        let lnk = prompt();
-        output(lnk, &toml_path);
-        // print!();
-        // let ans =
-        let ans = inquire::Text::new(
-            "Would you like to add another link? ((N)o/(y)es or any other input): ",
-        )
-        .prompt()
-        .expect("An error happened when asking if you'd like to continue");
-        if ans.to_lowercase() == "n" {
-            break;
-        }
-    }
 
+    fix_headers(&toml_path).expect("Unable to fix headers");
     Ok(())
+    // loop {
+    //     let lnk = prompt();
+    //     output(lnk, &toml_path);
+    //     // print!();
+    //     // let ans =
+    //     let ans = inquire::Text::new(
+    //         "Would you like to add another link? ((N)o/(y)es or any other input): ",
+    //     )
+    //     .prompt()
+    //     .expect("An error happened when asking if you'd like to continue");
+    //     if ans.to_lowercase() == "n" {
+    //         break;
+    //     }
+    // }
+
+    // Ok(())
 }
