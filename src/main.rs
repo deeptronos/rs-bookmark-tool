@@ -221,7 +221,7 @@ fn fix_filenames(dir: &str) -> std::io::Result<()> {
         let entry = entry?;
         let path = entry.path();
         if path.is_file() && path.extension().and_then(OsStr::to_str) == Some("toml") {
-            let filename = path.file_name().unwrap().to_str().unwrap();
+            let filename = path.file_stem().unwrap().to_str().unwrap();
             let safe_filename = unidecode(filename);
             let safe_filename = safe_filename.replace(' ', "_");
             let safe_filename = safe_filename.replace('.', "_");
@@ -230,7 +230,8 @@ fn fix_filenames(dir: &str) -> std::io::Result<()> {
             let safe_filename = safe_filename.replace('(', "");
             let safe_filename = safe_filename.replace(')', "");
             let safe_filename = safe_filename.replace('+', "");
-            let new_path = path.with_file_name(safe_filename);
+            let safe_header = safe_header.replace("__", "_");
+            let new_path = path.with_file_name(safe_filename + ".toml");
             fs::rename(&path, &new_path)?;
         }
     }
