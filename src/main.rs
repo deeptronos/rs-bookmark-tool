@@ -132,6 +132,7 @@ fn prompt() -> Link {
 /// Output the link's info to a TOML file.
 fn output(lnk: Link, dir: &str) {
     let safe_title = unidecode(&lnk.title);
+    // ROFL
     let safe_title = safe_title.replace('/', "_");
     let safe_title = safe_title.replace('\\', "_");
     let safe_title = safe_title.replace(':', "_");
@@ -144,6 +145,15 @@ fn output(lnk: Link, dir: &str) {
     let safe_title = safe_title.replace(' ', "_");
     let safe_title = safe_title.replace('(', "_");
     let safe_title = safe_title.replace(')', "_");
+    let safe_title = safe_title.replace('+', "_");
+    let safe_title = safe_title.replace('&', "_");
+    let safe_title = safe_title.replace('^', "_");
+    let safe_title = safe_title.replace('#', "_");
+    let safe_title = safe_title.replace('@', "_");
+    let safe_title = safe_title.replace('$', "_");
+    let safe_title = safe_title.replace('%', "_");
+    let safe_title = safe_title.replace('=', "_");
+    let safe_title = safe_title.replace("__", "_");
     let safe_title = safe_title.to_lowercase();
 
     let mut text: String = format!(
