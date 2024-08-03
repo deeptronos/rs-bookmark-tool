@@ -1,4 +1,4 @@
-[the_book_+_exercises]
+[the_book__exercises]
 title = "The Book + Exercises"
 link = " https://rust-book.cs.brown.edu/"
 desc = "Brown University's instance of the famous Rust Book adds interactive quizzes and modified explanations."

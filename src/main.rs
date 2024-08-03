@@ -183,8 +183,10 @@ fn fix_headers(dir: &str) -> std::io::Result<()> {
                     let header = &line[1..line.len() - 1];
                     let safe_header = unidecode(header);
                     let safe_header = safe_header.replace(' ', "_");
+                    let safe_header = safe_header.replace('.', "_");
                     let safe_header = safe_header.replace("'", "_");
                     let safe_header = safe_header.replace('"', "_");
+                    let safe_header = safe_header.replace('+', "");
                     let safe_header = safe_header.replace('(', "");
                     let safe_header = safe_header.replace(')', "");
                     new_content.push_str(&format!("[{}]\n", safe_header));
@@ -200,6 +202,29 @@ fn fix_headers(dir: &str) -> std::io::Result<()> {
     }
     Ok(())
 }
+
+/// Fix an issue where many link TOMLs had filenames containing invalid characters (mostly, quotes and double-quotes)
+fn fix_filenames(dir: &str) -> std::io::Result<()> {
+    let entries = fs::read_dir(dir)?;
+    for entry in entries{
+        let entry = entry?;
+        let path = entry.path();
+        if path.is_file() && path.extension().and_then(OsStr::to_str) == Some("toml") {
+            let filename = path.file_name().unwrap().to_str().unwrap();
+            let safe_filename = unidecode(filename);
+            let safe_filename = safe_filename.replace(' ', "_");
+            let safe_filename = safe_filename.replace('.', "_");
+            let safe_filename = safe_filename.replace("'", "_");
+            let safe_filename = safe_filename.replace('"', "_");
+            let safe_filename = safe_filename.replace('(', "");
+            let safe_filename = safe_filename.replace(')', "");
+            let new_path = path.with_file_name(safe_filename);
+            fs::rename(&path, &new_path)?;
+        }
+    }
+    Ok(())
+}
+
 
 fn main() -> std::io::Result<()> {
     let toml_directory = "/toml";

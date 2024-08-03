@@ -1,4 +1,4 @@
-[blessed.rs]
+[blessed_rs]
 title = "Blessed.rs"
 link = "https://blessed.rs/crates"
 desc = "An unofficial guide to the Rust ecosystem of Crates, and how to know who to trust"
