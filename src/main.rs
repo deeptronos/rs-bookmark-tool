@@ -178,67 +178,6 @@ accessed = \"{accessed}\"
     fs::write(format!("{}/{}.toml", dir, safe_title), text).expect("Unable to write file");
 }
 
-/// Fix an issue where many link TOMLs had headers with invalid characters (mostly, spaces)
-fn fix_headers(dir: &str) -> std::io::Result<()> {
-    let entries = fs::read_dir(dir)?;
-
-    for entry in entries {
-        let entry = entry?;
-        let path = entry.path();
-        if path.is_file() && path.extension().and_then(OsStr::to_str) == Some("toml") {
-            let content = fs::read_to_string(&path)?;
-            let mut new_content = String::new();
-            for line in content.lines() {
-                if line.starts_with('[') && line.ends_with(']') {
-                    let header = &line[1..line.len() - 1];
-                    let safe_header = unidecode(header);
-                    let safe_header = safe_header.replace(' ', "_");
-                    let safe_header = safe_header.replace('.', "_");
-                    let safe_header = safe_header.replace("'", "_");
-                    let safe_header = safe_header.replace('"', "_");
-                    let safe_header = safe_header.replace('+', "");
-                    let safe_header = safe_header.replace('(', "");
-                    let safe_header = safe_header.replace(')', "");
-                    let safe_header = safe_header.replace("__", "_");
-                    new_content.push_str(&format!("[{}]\n", safe_header));
-                } else {
-                    new_content.push_str(line);
-                    new_content.push('\n');
-                }
-            }
-            fs::write(&path, new_content)?;
-    
-    
-            }
-    }
-    Ok(())
-}
-
-/// Fix an issue where many link TOMLs had filenames containing invalid characters (mostly, quotes and double-quotes)
-fn fix_filenames(dir: &str) -> std::io::Result<()> {
-    let entries = fs::read_dir(dir)?;
-    for entry in entries{
-        let entry = entry?;
-        let path = entry.path();
-        if path.is_file() && path.extension().and_then(OsStr::to_str) == Some("toml") {
-            let filename = path.file_stem().unwrap().to_str().unwrap();
-            let safe_filename = unidecode(filename);
-            let safe_filename = safe_filename.replace(' ', "_");
-            let safe_filename = safe_filename.replace('.', "_");
-            let safe_filename = safe_filename.replace("'", "_");
-            let safe_filename = safe_filename.replace('"', "_");
-            let safe_filename = safe_filename.replace('(', "");
-            let safe_filename = safe_filename.replace(')', "");
-            let safe_filename = safe_filename.replace('+', "");
-            let safe_filename = safe_filename.replace("__", "_");
-            let new_path = path.with_file_name(safe_filename + ".toml");
-            fs::rename(&path, &new_path)?;
-        }
-    }
-    Ok(())
-}
-
-
 fn main() -> std::io::Result<()> {
     let toml_directory = "/toml";
     let cwd: PathBuf = env::current_dir()?;
