@@ -189,6 +189,7 @@ fn fix_headers(dir: &str) -> std::io::Result<()> {
                     let safe_header = safe_header.replace('+', "");
                     let safe_header = safe_header.replace('(', "");
                     let safe_header = safe_header.replace(')', "");
+                    let safe_header = safe_header.replace("__", "_");
                     new_content.push_str(&format!("[{}]\n", safe_header));
                 } else {
                     new_content.push_str(line);
@@ -218,6 +219,7 @@ fn fix_filenames(dir: &str) -> std::io::Result<()> {
             let safe_filename = safe_filename.replace('"', "_");
             let safe_filename = safe_filename.replace('(', "");
             let safe_filename = safe_filename.replace(')', "");
+            let safe_filename = safe_filename.replace('+', "");
             let new_path = path.with_file_name(safe_filename);
             fs::rename(&path, &new_path)?;
         }
@@ -241,7 +243,7 @@ fn main() -> std::io::Result<()> {
     }
 
 
-    fix_headers(&toml_path).expect("Unable to fix headers");
+    fix_filenames(&toml_path).expect("Unable to fix filenames");
     Ok(())
     // loop {
     //     let lnk = prompt();
