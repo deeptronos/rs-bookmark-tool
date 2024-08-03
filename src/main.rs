@@ -230,7 +230,7 @@ fn fix_filenames(dir: &str) -> std::io::Result<()> {
             let safe_filename = safe_filename.replace('(', "");
             let safe_filename = safe_filename.replace(')', "");
             let safe_filename = safe_filename.replace('+', "");
-            let safe_header = safe_header.replace("__", "_");
+            let safe_filename = safe_filename.replace("__", "_");
             let new_path = path.with_file_name(safe_filename + ".toml");
             fs::rename(&path, &new_path)?;
         }
