@@ -1,4 +1,5 @@
 use chrono::NaiveDate;
+use scraper::Html;
 use serde::{Deserialize, Serialize};
 use unidecode::unidecode;
 
@@ -91,6 +92,17 @@ pub fn format_tags(tags: &HashSet<String>) -> String {
     quoted_taglist.join(", ")
 }
 
+/// Uses scraper and reqwuest to browse a webpage and extract the meta description.
+fn browse_meta_description(url: &str) -> Option<String> {
+    let response = reqwest::blocking::get(url).ok()?;
+    let body = response.text().ok()?;
+    let document = Html::parse_document(&body);
+    let selector = scraper::Selector::parse("meta[name='description']").ok()?;
+    let meta_description = document.select(&selector).next()?;
+    let content = meta_description.value().attr("content")?;
+    Some(content.to_string())
+}
+
 /// Prompt the user to input a new link's info once.
 fn prompt() -> Link {
     let title = inquire::Text::new("Title: ")
@@ -99,9 +111,13 @@ fn prompt() -> Link {
     let link = inquire::Text::new("URL: ")
         .prompt()
         .expect("An error happened while asking you for a URL");
-    let desc = inquire::Text::new("Description: ")
+
+    let auto_desc = browse_meta_description(&link);
+    let desc = inquire::Text::new("(Press enter to use default) Description: ") // Autofill with meta description
+        .with_default(&auto_desc.unwrap_or_default()) // also use with_placeholder? or does this show the default to the user?
         .prompt()
         .expect("An error happened while asking you for a description");
+
     let added = inquire::Text::new("Date (YYYY-MM-DD format) the resource was added to bookmarks (Leave empty to autofill today)")
         .prompt()
         .expect("An error happened while asking you for the date the resource was added");
@@ -132,7 +148,7 @@ fn prompt() -> Link {
 /// Output the link's info to a TOML file.
 fn output(lnk: Link, dir: &str) {
     let safe_title = unidecode(&lnk.title);
-    // TODO ROFL
+    // TODO ROFL - condense by using iterator with a list of invalid chars.
     let safe_title = safe_title.replace('/', "_");
     let safe_title = safe_title.replace('\\', "_");
     let safe_title = safe_title.replace(':', "_");
@@ -192,23 +208,20 @@ fn main() -> std::io::Result<()> {
         println!("Found existing directory at {}.", &toml_path)
     }
 
+    loop {
+        let lnk = prompt();
+        output(lnk, &toml_path);
+        // print!();
+        // let ans =
+        let ans = inquire::Text::new(
+            "Would you like to add another link? ((N)o/(y)es or any other input): ",
+        )
+        .prompt()
+        .expect("An error happened when asking if you'd like to continue");
+        if ans.to_lowercase() == "n" {
+            break;
+        }
+    }
 
-    fix_filenames(&toml_path).expect("Unable to fix filenames");
     Ok(())
-    // loop {
-    //     let lnk = prompt();
-    //     output(lnk, &toml_path);
-    //     // print!();
-    //     // let ans =
-    //     let ans = inquire::Text::new(
-    //         "Would you like to add another link? ((N)o/(y)es or any other input): ",
-    //     )
-    //     .prompt()
-    //     .expect("An error happened when asking if you'd like to continue");
-    //     if ans.to_lowercase() == "n" {
-    //         break;
-    //     }
-    // }
-
-    // Ok(())
 }
