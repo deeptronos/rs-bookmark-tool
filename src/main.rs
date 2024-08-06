@@ -132,7 +132,7 @@ fn prompt() -> Link {
 /// Output the link's info to a TOML file.
 fn output(lnk: Link, dir: &str) {
     let safe_title = unidecode(&lnk.title);
-    // ROFL
+    // TODO ROFL
     let safe_title = safe_title.replace('/', "_");
     let safe_title = safe_title.replace('\\', "_");
     let safe_title = safe_title.replace(':', "_");
