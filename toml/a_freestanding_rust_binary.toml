@@ -1,0 +1,6 @@
+[a_freestanding_rust_binary]
+title = "A Freestanding Rust Binary"
+link = "https://usethesource.hashnode.dev/a-freestanding-rust-binary#heading-ehpersonality"
+desc = "Creating an executable that runs on bare-metal using Rust."
+added = "2024-08-06"
+accessed = "2024-08-06"

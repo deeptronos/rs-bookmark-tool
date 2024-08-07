@@ -1,7 +1,6 @@
 [effective_rust]
 title = "Effective Rust"
 link = "https://www.lurklurk.org/effective-rust/"
-desc = "35 specific ways to improve your Rust code"
-added = "2024-07-12"
-accessed = "2024-07-12"
-tags = ["free", "book"]
+desc = "A collection of specific ways to improve your use of Rust"
+added = "2024-08-06"
+accessed = "2024-08-06"

@@ -1,0 +1,7 @@
+[rust_design_patterns]
+title = "Rust Design Patterns"
+link = "https://rust-unofficial.github.io/patterns/patterns/index.html"
+desc = "A catalogue of Rust design patterns, anti-patterns and idioms"
+added = "2024-08-06"
+accessed = "2024-08-06"
+tags = ["book", "theory", "free"]

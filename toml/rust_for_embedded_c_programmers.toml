@@ -1,0 +1,6 @@
+[rust_for_embedded_c_programmers]
+title = "Rust for Embedded C Programmers"
+link = "https://opentitan.org/book/doc/rust_for_c_devs.html"
+desc = "An introduction to Rust targetting engineers with deep exposure to embedded systems."
+added = "2024-08-07"
+accessed = "2024-08-07"

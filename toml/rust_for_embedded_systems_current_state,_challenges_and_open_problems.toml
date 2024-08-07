@@ -1,0 +1,6 @@
+[rust_for_embedded_systems_current_state,_challenges_and_open_problems]
+title = "Rust for Embedded Systems: Current State, Challenges and Open Problems"
+link = "https://arxiv.org/pdf/2311.05063.pdf"
+desc = "A paper detailing a systemic study to understand the current state and challenges of using  Rust for embedded systems."
+added = "2024-08-06"
+accessed = "2024-08-06"

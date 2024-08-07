@@ -1,0 +1,6 @@
+[rust_procedural_macros]
+title = "Rust: Procedural Macros"
+link = "https://priver.dev/blog/rust/procedural-macros/"
+desc = "Article about developing procedural macros in Rust"
+added = "2024-08-06"
+accessed = "2024-08-06"

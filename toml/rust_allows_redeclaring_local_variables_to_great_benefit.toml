@@ -1,0 +1,7 @@
+[rust_allows_redeclaring_local_variables_to_great_benefit]
+title = "Rust allows redeclaring local variables to great benefit"
+link = "https://ntietz.com/blog/rust-shadowing-idiomatic/"
+desc = "Explains how Rust allows redeclaring local variables, which can be useful for things like making variables immutable or unwrapping containers while retaining sensible naming."
+added = "2024-08-06"
+accessed = "2024-08-06"
+tags = ["blog"]

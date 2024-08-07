@@ -1,0 +1,6 @@
+[elegant_library_apis_in_rust]
+title = "Elegant Library APIs in Rust"
+link = "https://deterministic.space/elegant-apis-in-rust.html"
+desc = "Some tips on how to write libraries with nice APIs in Rust."
+added = "2024-08-06"
+accessed = "2024-08-06"

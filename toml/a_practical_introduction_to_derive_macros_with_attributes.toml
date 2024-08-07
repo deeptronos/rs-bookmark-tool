@@ -1,0 +1,6 @@
+[a_practical_introduction_to_derive_macros_with_attributes]
+title = "A Practical Introduction to Derive Macros with Attributes"
+link = "https://www.youtube.com/watch?v=GFijwucFJqw"
+desc = "A tutorial on using derive macros with attributes. Demonstratings writing a derive macro that utilizes both manditory and optional attributes on structs, as well as applying attributes to individual struct fields."
+added = "2024-08-06"
+accessed = "2024-08-06"

@@ -1,0 +1,7 @@
+[discussion_discuss_naming_conventions]
+title = "Discussion: Discuss naming conventions"
+link = "https://github.com/rust-lang/api-guidelines/discussions/28"
+desc = "Explores naming conventions for Rust traits with the goal of distilling a set of consistent guidelines for trait naming in the Rust ecosystem."
+added = "2024-08-06"
+accessed = "2024-08-06"
+tags = ["discussion"]

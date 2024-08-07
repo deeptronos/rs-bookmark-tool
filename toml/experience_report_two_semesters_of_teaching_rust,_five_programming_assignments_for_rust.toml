@@ -1,0 +1,6 @@
+[experience_report_two_semesters_of_teaching_rust,_five_programming_assignments_for_rust]
+title = "Experience Report: Two Semesters of Teaching Rust, Five Programming Assignments for Rust"
+link = "https://pdxscholar.library.pdx.edu/rust-edu/2022/presentations/4/"
+desc = "Matthew Fluet talks about the experience of teaching Rust for two semesters, relating accrued positive, neutral, and negative learnings. Fluet describes and evaluates five programming assignments used: a mini-language interpreter; a puzzle solver; a trie library; a parallel evaluator for elementary cellular automata; and an asynchronous networked Rock-Paper-Scissors server."
+added = "2024-08-06"
+accessed = "2024-08-06"

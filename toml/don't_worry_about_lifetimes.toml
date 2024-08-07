@@ -1,0 +1,6 @@
+[don't_worry_about_lifetimes]
+title = "Don't Worry About Lifetimes"
+link = "https://corrode.dev/blog/lifetimes/"
+desc = "An article for Rust beginners on understanding and working with lifetimes, emphasizing that they are often easier to manage than it may initially appear."
+added = "2024-08-07"
+accessed = "2024-08-07"

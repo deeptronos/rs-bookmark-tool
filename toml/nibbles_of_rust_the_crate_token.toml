@@ -1,0 +1,6 @@
+[nibbles_of_rust_the_crate_token]
+title = "Nibbles of Rust: The $crate Token"
+link = "https://www.catmonad.xyz/blog/nibbles_03.html"
+desc = "Explains how to use the $crate token to access functions from other crates."
+added = "2024-08-06"
+accessed = "2024-08-06"

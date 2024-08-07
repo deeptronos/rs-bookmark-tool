@@ -5,7 +5,6 @@ use unidecode::unidecode;
 
 use std::collections::HashSet;
 use std::env;
-use std::ffi::OsStr;
 use std::fs;
 use std::path::PathBuf;
 

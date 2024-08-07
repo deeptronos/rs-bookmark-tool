@@ -1,0 +1,6 @@
+[the_inconceivable_types_of_rust_how_to_make_self-borrows_safe]
+title = "The Inconceivable Types of Rust: How to Make Self-Borrows Safe"
+link = "https://blog.polybdenum.com/2024/06/07/the-inconceivable-types-of-rust-how-to-make-self-borrows-safe.html"
+desc = "An exploration of hypothetical changes to the Rust type system that would enable safe self-borrows and async functions."
+added = "2024-08-07"
+accessed = "2024-08-07"

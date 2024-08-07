@@ -1,0 +1,6 @@
+[the_ultimate_guide_to_rust_newtypes]
+title = "The ultimate guide to Rust newtypes"
+link = "https://www.howtocodeit.com/articles/ultimate-guide-rust-newtypes"
+desc = "Clean up your code, clarify business logic and improve test coverage with Rust's newtype wrappers."
+added = "2024-08-07"
+accessed = "2024-08-07"

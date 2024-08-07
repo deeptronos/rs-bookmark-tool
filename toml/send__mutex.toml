@@ -1,0 +1,6 @@
+[send__mutex]
+title = "Send & Mutex"
+link = "https://cryptical.xyz/rust/send-mutex"
+desc = "Deep dive to Send & Sync using Mutex"
+added = "2024-08-07"
+accessed = "2024-08-07"

@@ -1,0 +1,7 @@
+[garbage_collection_makes_rust_easier_to_use_a_randomized_controlled_trial_of_the_bronze_garbage_collector]
+title = "Garbage Collection Makes Rust Easier to Use: A Randomized Controlled Trial of the Bronze Garbage Collector"
+link = "https://arxiv.org/abs/2110.01098v2"
+desc = "This paper presents a study showing that adding a garbage collector to Rust can significantly improve its usability."
+added = "2024-08-06"
+accessed = "2024-08-06"
+tags = ["paper"]

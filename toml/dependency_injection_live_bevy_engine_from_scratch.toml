@@ -1,0 +1,6 @@
+[dependency_injection_live_bevy_engine_from_scratch]
+title = "Dependency Injection live Bevy Engine from Scratch"
+link = "https://promethia-27.github.io/dependency_injection_like_bevy_from_scratch/introductions.html"
+desc = "A book that teaches dependency injection in Rust, starting from the basics and building up to more complex topics, to help readers understand how this pattern is used in libraries."
+added = "2024-08-06"
+accessed = "2024-08-06"

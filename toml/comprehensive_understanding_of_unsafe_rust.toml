@@ -1,0 +1,6 @@
+[comprehensive_understanding_of_unsafe_rust]
+title = "Comprehensive Understanding of Unsafe Rust"
+link = "https://rustmagazine.org/issue-3/understand-unsafe-rust/"
+desc = "A guide through a system understanding of unsafe Rust."
+added = "2024-08-06"
+accessed = "2024-08-06"

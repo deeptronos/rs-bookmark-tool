@@ -1,0 +1,7 @@
+[why_i_find_rust_interesting]
+title = "Why I find Rust interesting"
+link = "https://shiver.github.io/post/why_i_find_rust_interesting/"
+desc = "An in-depth exploration of why Rust is unique and interesting, focusing on its innovative approach to memory managemet through ownership and tracking lifetimes, rather than a traditional garbage collector."
+added = "2024-08-06"
+accessed = "2024-08-06"
+tags = ["blog"]

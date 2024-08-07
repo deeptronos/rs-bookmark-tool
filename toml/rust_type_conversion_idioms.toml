@@ -1,0 +1,6 @@
+[rust_type_conversion_idioms]
+title = "Rust Type Conversion Idioms"
+link = "https://qiita.com/legokichi/items/0f1c592d46a9aaf9a0ea"
+desc = "An overview of common type conversion idioms in Rust, covering a wide range of scenarios."
+added = "2024-08-06"
+accessed = "2024-08-06"
