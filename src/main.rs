@@ -1,3 +1,4 @@
+use chrono::Datelike;
 use chrono::NaiveDate;
 use scraper::Html;
 use serde::{Deserialize, Serialize};
@@ -213,6 +214,8 @@ fn output(lnk: Link, dir: &str) {
     let safe_title = safe_title.replace('$', "_");
     let safe_title = safe_title.replace('%', "_");
     let safe_title = safe_title.replace('=', "_");
+    let safe_title = safe_title.replace("'", "_");
+    let safe_title = safe_title.replace(".", "_");
     let safe_title = safe_title.replace("__", "_");
     let safe_title = safe_title.to_lowercase();
 
@@ -249,16 +252,22 @@ fn read_links_from_json(file_path: &str) -> Result<Vec<JsonLink>> {
 
 fn output_from_json(links: Vec<JsonLink>, dir: &str) {
     for link in links {
-        let title = link.name;
-        let link = link.url;
+        let title = link.title;
+        let lnk = link.url;
         let desc = link.description;
-        let added = link.time_added;
-        let accessed = link.time_last_used;
+        let added = chrono::Local::now().date_naive().year();
+        let accessed = chrono::Local::now().date_naive().year();
         let tags = link.tags;
-        let lnk = Link::new(&title, &link, &desc, &added, &accessed, &tags);
+        let lnk = Link::new(
+            &title,
+            &lnk,
+            &desc,
+            &added.to_string(),
+            &accessed.to_string(),
+            &tags,
+        );
         output(lnk, dir);
     }
-}
 }
 
 fn main() -> std::io::Result<()> {
@@ -275,7 +284,7 @@ fn main() -> std::io::Result<()> {
         println!("Found existing directory at {}.", &toml_path)
     }
 
-    Vec<JsonLink> json_links = read_links_from_json(&format!("{}{}", cwd, "/resources.json"))
+    let json_links = read_links_from_json(&format!("{}{}", cwd, "/resources.json"))
         .expect("Reading links from JSON failed.");
     output_from_json(json_links, &toml_path);
     Ok(())
