@@ -2,10 +2,9 @@ use chrono::Datelike;
 use chrono::NaiveDate;
 use scraper::Html;
 use serde::{Deserialize, Serialize};
-use serde_json::{Result, Value};
+use serde_json::Result;
 use unidecode::unidecode;
 
-use std::arch::aarch64::int16x4_t;
 use std::collections::HashSet;
 use std::env;
 use std::fs;
