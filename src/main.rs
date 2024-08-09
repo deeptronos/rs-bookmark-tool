@@ -1,11 +1,15 @@
 use chrono::NaiveDate;
 use scraper::Html;
 use serde::{Deserialize, Serialize};
+use serde_json::{Result, Value};
 use unidecode::unidecode;
 
+use std::arch::aarch64::int16x4_t;
 use std::collections::HashSet;
 use std::env;
 use std::fs;
+use std::fs::File;
+use std::io::BufReader;
 use std::path::PathBuf;
 
 /// A link to an educational resource.
@@ -85,6 +89,47 @@ impl Link {
     }
 }
 
+/// Link struct specified to resource.json format.
+#[derive(Clone, Debug, Deserialize, Serialize)]
+pub struct JsonLink {
+    pub title: String,
+    pub url: String,
+    pub description: String,
+    pub category: String,
+    pub year: i32,
+    pub tags: Option<HashSet<String>>,
+    pub free: bool,
+}
+
+impl JsonLink {
+    pub fn new(
+        title: &str,
+        url: &str,
+        description: &str,
+        category: &str,
+        year: i32,
+        tags: &Option<HashSet<String>>,
+        free: bool,
+    ) -> JsonLink {
+        let title = title.into();
+        let url = url.into();
+        let description = description.into();
+        let category = category.into();
+        let tags = tags.clone();
+
+        JsonLink {
+            title,
+            url,
+            description,
+            category,
+            year,
+            tags,
+            free,
+        }
+    }
+}
+
+/// Format hashset of strings representing a collection of tags associated with a link into a string containing a TOML-format array of tags.
 pub fn format_tags(tags: &HashSet<String>) -> String {
     let taglist: Vec<&str> = tags.iter().map(String::as_ref).collect();
     let quoted_taglist: Vec<String> = taglist.iter().map(|tag| format!("\"{}\"", tag)).collect();
@@ -193,6 +238,29 @@ accessed = \"{accessed}\"
     fs::write(format!("{}/{}.toml", dir, safe_title), text).expect("Unable to write file");
 }
 
+/// Take a JSON file of links w/ data attributes (name, description, etc.) and turn them into Link objects to output.
+fn read_links_from_json(file_path: &str) -> Result<Vec<JsonLink>> {
+    let file = File::open(file_path).expect("Unable to open file_path JSON");
+    let reader = BufReader::new(file);
+    let links: Vec<JsonLink> = serde_json::from_reader(reader).expect("from_reader failed.");
+    print!("{} links found.", links.len());
+    Ok(links)
+}
+
+fn output_from_json(links: Vec<JsonLink>, dir: &str) {
+    for link in links {
+        let title = link.name;
+        let link = link.url;
+        let desc = link.description;
+        let added = link.time_added;
+        let accessed = link.time_last_used;
+        let tags = link.tags;
+        let lnk = Link::new(&title, &link, &desc, &added, &accessed, &tags);
+        output(lnk, dir);
+    }
+}
+}
+
 fn main() -> std::io::Result<()> {
     let toml_directory = "/toml";
     let cwd: PathBuf = env::current_dir()?;
@@ -207,20 +275,25 @@ fn main() -> std::io::Result<()> {
         println!("Found existing directory at {}.", &toml_path)
     }
 
-    loop {
-        let lnk = prompt();
-        output(lnk, &toml_path);
-        // print!();
-        // let ans =
-        let ans = inquire::Text::new(
-            "Would you like to add another link? ((N)o/(y)es or any other input): ",
-        )
-        .prompt()
-        .expect("An error happened when asking if you'd like to continue");
-        if ans.to_lowercase() == "n" {
-            break;
-        }
-    }
-
+    Vec<JsonLink> json_links = read_links_from_json(&format!("{}{}", cwd, "/resources.json"))
+        .expect("Reading links from JSON failed.");
+    output_from_json(json_links, &toml_path);
     Ok(())
+
+    // loop {
+    //     let lnk = prompt();
+    //     output(lnk, &toml_path);
+    //     // print!();
+    //     // let ans =
+    //     let ans = inquire::Text::new(
+    //         "Would you like to add another link? ((N)o/(y)es or any other input): ",
+    //     )
+    //     .prompt()
+    //     .expect("An error happened when asking if you'd like to continue");
+    //     if ans.to_lowercase() == "n" {
+    //         break;
+    //     }
+    // }
+
+    // Ok(())
 }
