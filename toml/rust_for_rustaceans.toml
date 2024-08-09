@@ -1,0 +1,7 @@
+[rust_for_rustaceans]
+title = "Rust for Rustaceans"
+link = "https://nostarch.com/rust-rustaceans"
+desc = "Covers how to design reliable, idiomatic, and ergonomic Rust programs based on best principles."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["design", "ergonomic", "idiomatic"]

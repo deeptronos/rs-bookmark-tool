@@ -1,0 +1,7 @@
+[context-preserving_error_handling]
+title = "Context-preserving error handling"
+link = "https://kazlauskas.me/entries/errors"
+desc = "Explains how to use crates like 'thiserror' in combination with 'map_err' to add context to errors."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["rust-tips", "crates", "error-handling"]

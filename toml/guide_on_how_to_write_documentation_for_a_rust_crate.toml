@@ -1,0 +1,7 @@
+[guide_on_how_to_write_documentation_for_a_rust_crate]
+title = "Guide on how to write documentation for a Rust crate"
+link = "https://blog.guillaume-gomez.fr/articles/2020-03-12+Guide+on+how+to+write+documentation+for+a+Rust+crate"
+desc = "Writing good documentation with rustdoc including many examples."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["documentation", "best-practices", "rustdoc"]

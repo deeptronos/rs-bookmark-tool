@@ -1,0 +1,7 @@
+[build_your_own_jira_with_rust]
+title = "Build your own JIRA with Rust"
+link = "https://github.com/LukeMathWalker/build-your-own-jira-with-rust/"
+desc = "A test-driven workshop to learn Rust by building your own JIRA clone!"
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["project", "test-driven"]

@@ -1,0 +1,7 @@
+[command_line_applications_in_rust]
+title = "Command Line Applications in Rust"
+link = "https://rust-cli.github.io/book"
+desc = "A tutorial on how to write CLI apps in Rust, learning many aspects of the ecosystem."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["ecosystem", "tutorial", "cli"]

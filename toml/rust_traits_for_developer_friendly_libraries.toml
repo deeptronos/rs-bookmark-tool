@@ -1,0 +1,7 @@
+[rust_traits_for_developer_friendly_libraries]
+title = "Rust traits for developer friendly libraries"
+link = "https://benashford.github.io/blog/2015/05/24/rust-traits-for-developer-friendly-libraries/"
+desc = "Thoughts about implementing good Rust libraries."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["libraries", "development", "rust-traits"]

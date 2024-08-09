@@ -1,0 +1,7 @@
+[elements_of_rust]
+title = "Elements of Rust"
+link = "https://github.com/ferrous-systems/elements-of-rust"
+desc = "A collection of software engineering techniques for effectively expressing intent with Rust."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["best-practices", "software-engineering", "techniques"]

@@ -1,0 +1,7 @@
+[preferred_way_of_passing_`path`-like_types_around_]
+title = "Preferred way of passing `Path`-like types around?"
+link = "https://www.reddit.com/r/rust/comments/cekeq9/preferred_way_of_passing_pathlike_types_around/"
+desc = "A Reddit discussion on the best practices for passing `Path`-like types in Rust."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["best-practices", "discussion", "path-types"]

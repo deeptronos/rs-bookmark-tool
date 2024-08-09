@@ -1,0 +1,7 @@
+[idiomatic_rust_workshop]
+title = "Idiomatic Rust Workshop"
+link = "https://fettblog.eu/slides/idiomatic-rust/"
+desc = "A talk/workshop about idiomatic Rust code focusing on effective use of existing syntax and design patterns"
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["design-patterns", "syntax", "tooling"]

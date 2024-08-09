@@ -1,0 +1,7 @@
+[procedural_macros_workshop]
+title = "Procedural Macros Workshop"
+link = "https://github.com/dtolnay/proc-macro-workshop"
+desc = "A selection of projects designed to learn to write Rust procedural macros."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["macros", "coding"]

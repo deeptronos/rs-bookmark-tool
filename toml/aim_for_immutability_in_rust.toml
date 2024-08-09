@@ -1,0 +1,7 @@
+[aim_for_immutability_in_rust]
+title = "Aim For Immutability in Rust"
+link = "https://corrode.dev/blog/immutability/"
+desc = "Explains why variables are immutable in Rust by default."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["variables", "rust-basics", "immutability"]

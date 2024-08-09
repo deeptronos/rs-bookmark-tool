@@ -1,0 +1,7 @@
+[convenient_and_idiomatic_conversions_in_rust]
+title = "Convenient and idiomatic conversions in Rust"
+link = "https://ricardomartins.cc/2016/08/03/convenient_and_idiomatic_conversions_in_rust"
+desc = "Explains 'From<T>', 'Into<T>', 'TryFrom<T>', 'TryInto<T>', 'AsRef<T>' and 'AsMut<T>' with practical examples."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["conversions", "examples"]

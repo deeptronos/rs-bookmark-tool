@@ -1,0 +1,7 @@
+[await_a_minute]
+title = "Await a minute"
+link = "https://docs.rs/dtolnay/0.0.3/dtolnay/macro._01__await_a_minute.html"
+desc = "Example code for moving from raw futures to async/await syntax to improve error handling."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["error-handling", "await", "async"]

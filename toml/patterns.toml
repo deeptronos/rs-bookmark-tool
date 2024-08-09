@@ -1,0 +1,7 @@
+[patterns]
+title = "Patterns"
+link = "https://rust-unofficial.github.io/patterns/"
+desc = "A catalogue of design patterns in Rust."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["design-patterns", "catalogue", "best-practices"]

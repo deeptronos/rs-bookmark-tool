@@ -1,0 +1,7 @@
+[an_idiomatic_way_to_sum_up_values_in_a_multidimensional_array]
+title = "An idiomatic way to sum up values in a multidimensional Array"
+link = "https://users.rust-lang.org/t/an-idiomatic-way-to-sum-up-values-in-a-multidimensional-array/9485"
+desc = "Forum discussion on idiomatic approaches to summing values in a multidimensional array in Rust."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["arrays", "summing"]

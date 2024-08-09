@@ -1,0 +1,7 @@
+[pretty_state_machine_patterns_in_rust]
+title = "Pretty State Machine Patterns in Rust"
+link = "https://hoverbear.org/2016/10/12/rust-state-machine-pattern/"
+desc = "How to represent a State Machine in an expressive and understandable way in Rust."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["state-machine", "patterns"]

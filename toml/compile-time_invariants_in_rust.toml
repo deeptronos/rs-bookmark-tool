@@ -1,0 +1,7 @@
+[compile-time_invariants_in_rust]
+title = "Compile-Time Invariants in Rust"
+link = "https://corrode.dev/blog/compile-time-invariants/"
+desc = "Shows how macros can be used to enforce invariants at compile-time."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["compile-time", "macros", "invariants"]

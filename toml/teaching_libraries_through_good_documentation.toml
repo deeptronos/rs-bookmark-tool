@@ -1,0 +1,7 @@
+[teaching_libraries_through_good_documentation]
+title = "Teaching libraries through good documentation"
+link = "https://deterministic.space/teaching-libraries.html"
+desc = "How to use the full power of Rust's documentation support (e.g. doc tests)."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["libraries", "documentation"]

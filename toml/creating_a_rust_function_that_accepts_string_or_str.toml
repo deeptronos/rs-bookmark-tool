@@ -1,0 +1,7 @@
+[creating_a_rust_function_that_accepts_string_or_str]
+title = "Creating a Rust function that accepts String or &str"
+link = "https://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html"
+desc = "How to make calling your code both ergonomic and fast (zero-allocation)."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["string-handling", "functions"]

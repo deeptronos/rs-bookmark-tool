@@ -1,7 +1,7 @@
 [high_assurance_rust]
 title = "High Assurance Rust"
 link = "https://highassurance.rs/"
-desc = "Provides an introduction to building performant software that we can trust. (WIP)"
-added = "2024-07-08"
-accessed = "2024-07-08"
-tags = ["book"]
+desc = "Developing secure and robust software, focusing on embedded-friendly data structures in Rust."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["embedded", "security", "robustness"]

@@ -1,0 +1,7 @@
+[hecto_build_your_own_text_editor_in_rust]
+title = "Hecto: Build your own text editor in Rust"
+link = "https://www.flenker.blog/hecto/"
+desc = "This is a series of blog posts that shows you how to build a text editor in Rust"
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["project", "learning"]

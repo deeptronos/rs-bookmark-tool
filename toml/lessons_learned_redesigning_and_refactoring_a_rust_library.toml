@@ -1,0 +1,7 @@
+[lessons_learned_redesigning_and_refactoring_a_rust_library]
+title = "Lessons learned redesigning and refactoring a Rust Library"
+link = "https://web.archive.org/web/20220126172949/https://blog.mgattozzi.dev/refactor-rust/"
+desc = "'RefCell', the builder pattern and more."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["refactoring", "design-patterns", "library"]

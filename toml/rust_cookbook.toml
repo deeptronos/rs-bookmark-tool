@@ -1,0 +1,7 @@
+[rust_cookbook]
+title = "Rust Cookbook"
+link = "https://github.com/rust-lang-nursery/rust-cookbook"
+desc = "Examples that demonstrate good practices to accomplish common programming tasks in Rust."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["programming", "good-practices", "examples"]

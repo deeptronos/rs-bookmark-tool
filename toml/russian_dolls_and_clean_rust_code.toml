@@ -1,0 +1,7 @@
+[russian_dolls_and_clean_rust_code]
+title = "Russian Dolls and clean Rust code"
+link = "https://web.archive.org/web/20220126183049/https://blog.mgattozzi.dev/russian-dolls/"
+desc = "How to use the full power of 'Option' and 'Result' (especially 'and_then()' and 'unwrap_or()')."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["option", "result", "code-quality"]

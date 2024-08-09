@@ -1,0 +1,7 @@
+[clippy]
+title = "clippy"
+link = "https://github.com/rust-lang/rust-clippy"
+desc = "A bunch of lints to catch common mistakes and improve your Rust code."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["code-quality", "lints", "tool"]

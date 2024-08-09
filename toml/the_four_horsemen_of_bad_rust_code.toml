@@ -1,0 +1,7 @@
+[the_four_horsemen_of_bad_rust_code]
+title = "The Four Horsemen of Bad Rust Code"
+link = "https://github.com/corrode/four-horsemen-talk"
+desc = "A talk about common pitfalls in Rust code like overengineering and premature optimization."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["patterns", "common-mistakes", "pitfalls"]

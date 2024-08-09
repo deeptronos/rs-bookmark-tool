@@ -1,0 +1,7 @@
+[rust_api_guidelines]
+title = "Rust API Guidelines"
+link = "https://rust-lang.github.io/api-guidelines/"
+desc = "An extensive list of recommendations for idiomatic Rust APIs."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["guidelines", "api", "best-practices"]

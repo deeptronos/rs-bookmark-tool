@@ -1,0 +1,7 @@
+[rust_development_at_sentry]
+title = "Rust Development at Sentry"
+link = "https://develop.sentry.dev/rust/"
+desc = "A document containing useful resources for getting started with Rust and adhering to Sentry coding principles."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["guide", "coding-principles", "development"]

@@ -1,0 +1,7 @@
+[discover_the_world_of_microcontrollers_through_rust!]
+title = "Discover the world of microcontrollers through Rust!"
+link = "https://rust-embedded.github.io/discovery/"
+desc = "An introductory course on microcontroller-based embedded systems using Rust."
+added = "2024-08-09"
+accessed = "2024-08-09"
+tags = ["embedded-systems", "course", "microcontroller"]
