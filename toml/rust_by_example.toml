@@ -1,4 +1,3 @@
-[rust_by_example]
 title = "Rust by Example"
 link = "https://doc.rust-lang.org/rust-by-example/"
 desc = "A community driven collection of example code which follow Rust best practices."

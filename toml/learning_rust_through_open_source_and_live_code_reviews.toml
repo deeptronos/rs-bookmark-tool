@@ -1,4 +1,3 @@
-[learning_rust_through_open_source_and_live_code_reviews]
 title = "Learning Rust through open source and live code reviews"
 link = "https://loige.co/learning-rust-through-open-source-and-live-code-reviews/"
 desc = "Covers patterns like 'FromStr' and exposing a CLI and a library in one crate."

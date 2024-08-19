@@ -1,4 +1,3 @@
-[small_rust_tutorial_for_mlops]
 title = "Small Rust Tutorial for MLOps"
 link = "https://nogibjj.github.io/rust-tutorial/learn_rust_tips.html"
 desc = "A tutorial for learning the language in the MLOps context. Covers a range, from getting started to advanced concepts like distributed computing and serverless."

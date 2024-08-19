@@ -1,4 +1,3 @@
-[rust_cookbook]
 title = "Rust Cookbook"
 link = "https://github.com/rust-lang-nursery/rust-cookbook"
 desc = "Examples that demonstrate good practices to accomplish common programming tasks in Rust."

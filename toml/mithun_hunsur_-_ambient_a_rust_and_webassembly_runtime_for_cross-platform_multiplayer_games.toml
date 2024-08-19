@@ -1,4 +1,3 @@
-[mithun_hunsur_-_ambient_a_rust_and_webassembly_runtime_for_cross-platform_multiplayer_games]
 title = "Mithun Hunsur - Ambient: A Rust and WebAssembly Runtime for Cross-Platform Multiplayer Games"
 link = "https://www.youtube.com/watch?v=tSnKx2irwzE"
 desc = "Discover the power of Rust in WebAssembly with Ambient: an open-source runtime for high-performance multiplayer games and 3D applications (using WebGPU)"

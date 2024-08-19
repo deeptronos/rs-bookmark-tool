@@ -1,4 +1,3 @@
-[what_the_hal__the_quest_for_finding_a_suitable_embedded_rust_hal]
 title = "What the HAL? The Quest for Finding a Suitable Embedded Rust HAL"
 link = "https://blog.theembeddedrustacean.com/what-the-hal-the-quest-for-finding-a-suitable-embedded-rust-hal"
 desc = "A comprehensive overview of the Rrust embedded HAL landscape, helping developers select the most appropriate HAL for their embedded projects."

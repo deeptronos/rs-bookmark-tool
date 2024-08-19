@@ -1,4 +1,3 @@
-[don't_worry_about_lifetimes]
 title = "Don't Worry About Lifetimes"
 link = "https://corrode.dev/blog/lifetimes/"
 desc = "An article for Rust beginners on understanding and working with lifetimes, emphasizing that they are often easier to manage than it may initially appear."

@@ -1,4 +1,3 @@
-[aiming_for_idiomatic_rust]
 title = "Aiming for idiomatic Rust"
 link = "https://web.archive.org/web/20221203043933/https://shane-o.dev/blog/aiming-for-idiomatic-rust"
 desc = "Discusses different ways to solve a popular coding puzzle, 'balanced brackets', in Rust."

@@ -1,4 +1,3 @@
-[iteration_patterns_for_result__option]
 title = "Iteration patterns for Result & Option"
 link = "http://xion.io/post/code/rust-iter-patterns.html"
 desc = "Explores how to filter and partition iterators of Result and Option types idiomatically."

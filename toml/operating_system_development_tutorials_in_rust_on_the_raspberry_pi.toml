@@ -1,4 +1,3 @@
-[operating_system_development_tutorials_in_rust_on_the_raspberry_pi]
 title = "Operating System development tutorials in Rust on the Raspberry Pi"
 link = "https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials"
 desc = "Learn to write an embedded OS in Rust"

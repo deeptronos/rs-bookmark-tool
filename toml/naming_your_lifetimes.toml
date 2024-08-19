@@ -1,4 +1,3 @@
-[naming_your_lifetimes]
 title = "Naming Your Lifetimes"
 link = "https://www.possiblerust.com/pattern/naming-your-lifetimes"
 desc = "Explains how using longer, declarative lifetime names can help to disambiguate which borrow is which."

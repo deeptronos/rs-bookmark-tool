@@ -1,4 +1,3 @@
-[concurrency_programming_via_rust]
 title = "Concurrency Programming via Rust"
 link = "https://github.com/smallnest/concurrency-programming-via-rust"
 desc = "Examples of concurrency concepts implemented in Rust,  as well as a CN textbook covering the material"

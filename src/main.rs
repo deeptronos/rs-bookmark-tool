@@ -7,127 +7,16 @@ use unidecode::unidecode;
 
 use std::collections::HashSet;
 use std::env;
+use std::ffi::OsStr;
 use std::fs;
 use std::fs::File;
 use std::io::BufReader;
 use std::path::PathBuf;
 
-/// A link to an educational resource.
-/// # Fields
-/// * `title` - The title of the resource.
-/// * `link` - The URL of the resource.
-/// * `desc` - A description of the resource.
-/// * `added` - The date (in `YYYY-MM-DD`) the resource was added to the database.
-/// * `accessed` - The date (in `YYYY-MM-DD`) the resource was last accessed.
-/// * `tags` - A set of tags associated with the resource.
-#[derive(Clone, Debug, Deserialize, Serialize)]
-pub struct Link {
-    pub title: String,
-    pub link: String,
-    pub desc: String,
-    pub added: NaiveDate,
-    pub accessed: NaiveDate,
-
-    // #[serde(with = "ts_seconds_option")]
-    // pub added: toml_datetime::Date,
-    // #[serde(with = "ts_seconds_option")]
-    // pub accessed: toml_datetime::Date,
-    pub tags: Option<HashSet<String>>,
-}
-
-impl Link {
-    pub fn new(
-        title: &str,
-        link: &str,
-        desc: &str,
-        added: &str,
-        accessed: &str,
-        tags: &Option<HashSet<String>>,
-    ) -> Link {
-        let title = title.into();
-        let link = link.into();
-        let desc = desc.into();
-        let added_str: String = added.into();
-        let accessed_str: String = accessed.into();
-        let tags = tags.clone();
-
-        // Parse the added date string into a NaiveDate object
-        let added = if added_str.is_empty() || added_str.trim().to_lowercase() == "x" {
-            chrono::Local::now().date_naive()
-        } else {
-            match chrono::NaiveDate::parse_from_str(&added_str, "%Y-%m-%d") {
-                Ok(date) => date,
-                Err(_) => {
-                    eprintln!("Invalid date format for 'added' field. Using current date instead.");
-                    chrono::Local::now().date_naive()
-                }
-            }
-        };
-
-        let accessed = if accessed_str.is_empty() || added_str.trim().to_lowercase() == "x" {
-            chrono::Local::now().date_naive()
-        } else {
-            match chrono::NaiveDate::parse_from_str(&accessed_str, "%Y-%m-%d") {
-                Ok(date) => date,
-                Err(_) => {
-                    eprintln!(
-                        "Invalid date format for 'accessed' field. Using current date instead."
-                    );
-                    chrono::Local::now().date_naive()
-                }
-            }
-        };
-
-        Link {
-            title,
-            link,
-            desc,
-            added,
-            accessed,
-            tags,
-        }
-    }
-}
-
-/// Link struct specified to resource.json format.
-#[derive(Clone, Debug, Deserialize, Serialize)]
-pub struct JsonLink {
-    pub title: String,
-    pub url: String,
-    pub description: String,
-    pub category: String,
-    pub year: i32,
-    pub tags: Option<HashSet<String>>,
-    pub free: bool,
-}
-
-impl JsonLink {
-    pub fn new(
-        title: &str,
-        url: &str,
-        description: &str,
-        category: &str,
-        year: i32,
-        tags: &Option<HashSet<String>>,
-        free: bool,
-    ) -> JsonLink {
-        let title = title.into();
-        let url = url.into();
-        let description = description.into();
-        let category = category.into();
-        let tags = tags.clone();
-
-        JsonLink {
-            title,
-            url,
-            description,
-            category,
-            year,
-            tags,
-            free,
-        }
-    }
-}
+mod link;
+use link::JsonLink;
+use link::Link;
+pub mod validate;
 
 /// Format hashset of strings representing a collection of tags associated with a link into a string containing a TOML-format array of tags.
 pub fn format_tags(tags: &HashSet<String>) -> String {
@@ -219,14 +108,12 @@ fn output(lnk: Link, dir: &str) {
     let safe_title = safe_title.to_lowercase();
 
     let mut text: String = format!(
-        "[{safe_title}]
-title = \"{title}\"
+        "title = \"{title}\"
 link = \"{link}\"
 desc = \"{desc}\"
 added = \"{added}\"
 accessed = \"{accessed}\"
 ",
-        safe_title = safe_title,
         title = lnk.title,
         link = lnk.link,
         desc = lnk.desc,
@@ -269,6 +156,29 @@ fn output_from_json(links: Vec<JsonLink>, dir: &str) {
     }
 }
 
+/// Remove all headers from TOML. The header contains the same info as the file name, so it's not important + causes difficulty with serde.
+fn fix_headers(dir: &str) -> std::io::Result<()> {
+    let entries = fs::read_dir(dir)?;
+    for entry in entries {
+        let entry = entry?;
+        let path = entry.path();
+        if path.is_file() && path.extension().and_then(OsStr::to_str) == Some("toml") {
+            let content = fs::read_to_string(&path)?;
+            let mut new_content = String::new();
+            for line in content.lines() {
+                if line.starts_with('[') && line.ends_with(']') {
+                    // Pass
+                } else {
+                    new_content.push_str(line);
+                    new_content.push('\n');
+                }
+            }
+            fs::write(&path, new_content)?;
+        }
+    }
+    Ok(())
+}
+
 fn main() -> std::io::Result<()> {
     let toml_directory = "/toml";
     let cwd: PathBuf = env::current_dir()?;
@@ -282,11 +192,15 @@ fn main() -> std::io::Result<()> {
     } else {
         println!("Found existing directory at {}.", &toml_path)
     }
-
-    let json_links = read_links_from_json(&format!("{}{}", cwd, "/resources.json"))
-        .expect("Reading links from JSON failed.");
-    output_from_json(json_links, &toml_path);
+    fix_headers(&toml_path)?;
     Ok(())
+
+    // let result = validate::validate_entries(&toml_path);
+    // match (result) {
+    //     Ok(()) => println!("No errors found."),
+    //     _ => println!("{:#?} errors found.", result),
+    // }
+    // Ok(())
 
     // loop {
     //     let lnk = prompt();

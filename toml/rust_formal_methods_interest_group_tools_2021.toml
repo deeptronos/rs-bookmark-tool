@@ -1,4 +1,3 @@
-[rust_formal_methods_interest_group__tools_2021]
 title = "Rust Formal Methods Interest Group: Tools (2021)"
 link = "https://rust-formal-methods.github.io/tools.html"
 desc = "A guide to Rust verification tools for ensuring code safety and correctness"

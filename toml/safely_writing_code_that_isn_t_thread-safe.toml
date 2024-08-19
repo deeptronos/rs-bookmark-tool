@@ -1,4 +1,3 @@
-[safely_writing_code_that_isn_t_thread-safe]
 title = "Safely writing code that isn't thread-safe"
 link = "https://cliffle.com/blog/not-thread-safe/"
 desc = "An introduction to writing non-thread-safe code within the safety features Rust enables."

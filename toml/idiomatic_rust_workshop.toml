@@ -1,4 +1,3 @@
-[idiomatic_rust_workshop]
 title = "Idiomatic Rust Workshop"
 link = "https://fettblog.eu/slides/idiomatic-rust/"
 desc = "A talk/workshop about idiomatic Rust code focusing on effective use of existing syntax and design patterns"

@@ -1,4 +1,3 @@
-[packaging_your_rust_code]
 title = "Packaging Your Rust Code"
 link = "https://skerritt.blog/packaging-your-rust-code/"
 desc = "A walk through the entire process of packaging and distributing a Rust project. Valuable for Rust developers looking to share their work with others."

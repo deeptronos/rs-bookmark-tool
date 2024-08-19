@@ -1,4 +1,3 @@
-[actors_with_tokio]
 title = "Actors with Tokio"
 link = "https://ryhl.io/blog/actors-with-tokio/"
 desc = "An explanation of how to build actors directly with Tokio, without using any additional crates. Covers important details such as where to make spawn calls, handling actor tasks and channels, and graceful shutdown."

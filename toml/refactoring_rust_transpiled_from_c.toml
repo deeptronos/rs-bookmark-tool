@@ -1,4 +1,3 @@
-[refactoring_rust_transpiled_from_c]
 title = "Refactoring Rust Transpiled from C"
 link = "https://immunant.com/blog/2020/09/transpiled_c_safety/"
 desc = "Describes how to lift a C-project that was automatically converted to unsafe Rust to safer, more idiomatic Rust."

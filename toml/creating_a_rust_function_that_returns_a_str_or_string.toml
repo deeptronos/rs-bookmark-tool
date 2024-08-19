@@ -1,4 +1,3 @@
-[creating_a_rust_function_that_returns_a_str_or_string]
 title = "Creating a Rust function that returns a &str or String"
 link = "https://hermanradtke.com/2015/05/29/creating-a-rust-function-that-returns-string-or-str.html"
 desc = "How 'Into' and 'Cow' (Clone-on-write) work together to avoid allocations for string types."

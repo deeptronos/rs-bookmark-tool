@@ -1,4 +1,3 @@
-[math_with_distances_in_rust_safety_and_correctness_across_units]
 title = "Math with distances in Rust: safety and correctness across units"
 link = "https://ferrisellis.com/content/rust-implementing-units-for-types/"
 desc = "How to create a system to cleanly and safely do arithmetic with lengths."

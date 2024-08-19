@@ -1,4 +1,3 @@
-[rust_patterns_enums_instead_of_booleans]
 title = "Rust Patterns: Enums Instead Of Booleans"
 link = "http://blakesmith.me/2019/05/07/rust-patterns-enums-instead-of-booleans.html"
 desc = "Discusses how using enums instead of booleans can express intent more clearly in Rust."

@@ -1,4 +1,3 @@
-[hexagonal_architecture_in_rust]
 title = "Hexagonal architecture in Rust"
 link = "https://alexis-lozano.com/hexagonal-architecture-in-rust-1/"
 desc = "Describes how to build a Rust service using domain driven design and a test-first approach."

@@ -1,4 +1,3 @@
-[next_js_and_rust__an_innovative_approach_to_full-stack_development]
 title = "Next.js and Rust: An Innovative Approach to Full-Stack Development"
 link = "https://joshmo.hashnode.dev/nextjs-and-rust-an-innovative-approach-to-full-stack-development"
 desc = "A detailed tutorial on building a full-stack web application using Next.js for the frontend and Rust with the Axum framework for the backend, including features like authentication  and password reset functionality"

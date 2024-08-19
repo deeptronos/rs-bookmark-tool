@@ -1,4 +1,3 @@
-[the_balance_between_cost,_useability_and_soundness_in_c_bindings,_and_rust-sdl2's_release]
 title = "The balance between cost, useability and soundness in C bindings, and Rust-SDL2's release"
 link = "https://web.archive.org/web/20190509123207/https://cobrand.github.io/rust/sdl2/2017/05/07/the-balance-between-soundness-cost-useability.html"
 desc = "Writing safe, sound, idiomatic libraries despite the limitations of the borrow checker."

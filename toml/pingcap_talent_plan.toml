@@ -1,4 +1,3 @@
-[pingcap_talent_plan]
 title = "PingCAP talent plan"
 link = "https://github.com/pingcap/talent-plan"
 desc = "A series of training courses about writing distributed systems in Rust."

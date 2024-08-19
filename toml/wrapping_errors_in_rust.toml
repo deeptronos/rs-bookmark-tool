@@ -1,4 +1,3 @@
-[wrapping_errors_in_rust]
 title = "Wrapping errors in Rust"
 link = "https://edgarluque.com/blog/wrapping-errors-in-rust"
 desc = "Wrapping 'reqwest::Error' and a custom error type as an enum to make library usage easier."

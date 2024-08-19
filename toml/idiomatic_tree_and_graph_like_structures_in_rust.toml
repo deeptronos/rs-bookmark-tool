@@ -1,4 +1,3 @@
-[idiomatic_tree_and_graph_like_structures_in_rust]
 title = "Idiomatic tree and graph like structures in Rust"
 link = "https://rust-leipzig.github.io/architecture/2016/12/20/idiomatic-trees-in-rust/"
 desc = "Introduction to safe, dynamic, arena based tree structures without using lifetimes."

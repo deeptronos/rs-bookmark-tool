@@ -1,4 +1,3 @@
-[making_a__-sys_crate]
 title = "Making a *-sys crate"
 link = "https://kornel.ski/rust-sys-crate"
 desc = "A detailed guide on how to create a Rust sys crate to interface with C libraries"
