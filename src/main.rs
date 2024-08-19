@@ -156,29 +156,6 @@ fn output_from_json(links: Vec<JsonLink>, dir: &str) {
     }
 }
 
-/// Remove all headers from TOML. The header contains the same info as the file name, so it's not important + causes difficulty with serde.
-fn fix_headers(dir: &str) -> std::io::Result<()> {
-    let entries = fs::read_dir(dir)?;
-    for entry in entries {
-        let entry = entry?;
-        let path = entry.path();
-        if path.is_file() && path.extension().and_then(OsStr::to_str) == Some("toml") {
-            let content = fs::read_to_string(&path)?;
-            let mut new_content = String::new();
-            for line in content.lines() {
-                if line.starts_with('[') && line.ends_with(']') {
-                    // Pass
-                } else {
-                    new_content.push_str(line);
-                    new_content.push('\n');
-                }
-            }
-            fs::write(&path, new_content)?;
-        }
-    }
-    Ok(())
-}
-
 fn main() -> std::io::Result<()> {
     let toml_directory = "/toml";
     let cwd: PathBuf = env::current_dir()?;
@@ -192,17 +169,16 @@ fn main() -> std::io::Result<()> {
     } else {
         println!("Found existing directory at {}.", &toml_path)
     }
-    fix_headers(&toml_path)?;
+
+
+    let result = validate::validate_entries(&toml_path);
+    match (result) {
+        Ok(()) => println!("No errors found."),
+        _ => println!("{:#?} errors found.", result),
+    }
     Ok(())
 
-    // let result = validate::validate_entries(&toml_path);
-    // match (result) {
-    //     Ok(()) => println!("No errors found."),
-    //     _ => println!("{:#?} errors found.", result),
-    // }
-    // Ok(())
-
-    // loop {
+    loop {
     //     let lnk = prompt();
     //     output(lnk, &toml_path);
     //     // print!();
