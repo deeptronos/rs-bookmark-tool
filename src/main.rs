@@ -170,27 +170,29 @@ fn main() -> std::io::Result<()> {
         println!("Found existing directory at {}.", &toml_path)
     }
 
-    let result = validate::validate_entries(&toml_path);
-    match (result) {
-        Ok(()) => println!("No errors found."),
-        _ => println!("{:#?} errors found.", result),
+    loop {
+        let ans = inquire::Text::new(
+            "Choose: (V)alidate TOML format of all links. (C)ontinue adding links. (Q)uit. ",
+        )
+        .prompt()
+        .expect("An error happened when asking for your choice.");
+
+        match ans.to_lowercase().as_str() {
+            "v" => {
+                let result = validate::validate_entries(&toml_path);
+                match (result) {
+                    Ok(()) => println!("No errors found."),
+                    _ => println!("Errors found: {:#?}", result),
+                }
+            }
+            "q" => break,
+            "c" => {
+                let lnk = prompt();
+                output(lnk, &toml_path);
+            }
+            _ => println!("Invalid choice."),
+        }
     }
+
     Ok(())
-
-    // loop {
-    //     let lnk = prompt();
-    //     output(lnk, &toml_path);
-    //     // print!();
-    //     // let ans =
-    //     let ans = inquire::Text::new(
-    //         "Would you like to add another link? ((N)o/(y)es or any other input): ",
-    //     )
-    //     .prompt()
-    //     .expect("An error happened when asking if you'd like to continue");
-    //     if ans.to_lowercase() == "n" {
-    //         break;
-    //     }
-    // }
-
-    // Ok(())
 }
