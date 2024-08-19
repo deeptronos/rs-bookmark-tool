@@ -170,7 +170,6 @@ fn main() -> std::io::Result<()> {
         println!("Found existing directory at {}.", &toml_path)
     }
 
-
     let result = validate::validate_entries(&toml_path);
     match (result) {
         Ok(()) => println!("No errors found."),
@@ -178,7 +177,7 @@ fn main() -> std::io::Result<()> {
     }
     Ok(())
 
-    loop {
+    // loop {
     //     let lnk = prompt();
     //     output(lnk, &toml_path);
     //     // print!();
