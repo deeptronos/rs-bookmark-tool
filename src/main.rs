@@ -1,3 +1,4 @@
+use aho_corasick::AhoCorasick;
 use chrono::Datelike;
 use chrono::NaiveDate;
 use scraper::Html;
@@ -23,6 +24,30 @@ pub fn format_tags(tags: &HashSet<String>) -> String {
     let taglist: Vec<&str> = tags.iter().map(String::as_ref).collect();
     let quoted_taglist: Vec<String> = taglist.iter().map(|tag| format!("\"{}\"", tag)).collect();
     quoted_taglist.join(", ")
+}
+
+/// Format a string representing the human-readable title of a link into one that's safe to use as a filename or key.
+fn format_safe_title(title: &str) -> String {
+    let safe_title = unidecode(title);
+    let patterns = &[
+        "/", "\\", ":", ";", "*", "?", "\"", "<", ">", "|", " ", "(", ")", "+", "&", "^", "#", "@",
+        "$", "%", "=", "'", ".", "_", ",", "!", "~", "`", "[", "]", "{", "}",
+    ];
+    let replace_with = &["-"; 32]; // 32 is the length of patterns
+    let ac = AhoCorasick::new(patterns);
+    match ac {
+        Ok(ac) => {
+            let t = ac.replace_all(&safe_title, replace_with).to_lowercase();
+            let mut _t = t;
+            while _t.contains("--") {
+                _t = _t.replace("--", "-");
+            }
+            _t
+        }
+        Err(_) => {
+            panic!("AhoCorasick f'd up!")
+        }
+    }
 }
 
 /// Uses scraper and reqwuest to browse a webpage and extract the meta description.
@@ -80,32 +105,7 @@ fn prompt() -> Link {
 
 /// Output the link's info to a TOML file.
 fn output(lnk: Link, dir: &str) {
-    let safe_title = unidecode(&lnk.title);
-    // TODO ROFL - condense by using iterator with a list of invalid chars.
-    let safe_title = safe_title.replace('/', "_");
-    let safe_title = safe_title.replace('\\', "_");
-    let safe_title = safe_title.replace(':', "_");
-    let safe_title = safe_title.replace('*', "_");
-    let safe_title = safe_title.replace('?', "_");
-    let safe_title = safe_title.replace('"', "_");
-    let safe_title = safe_title.replace('<', "_");
-    let safe_title = safe_title.replace('>', "_");
-    let safe_title = safe_title.replace('|', "_");
-    let safe_title = safe_title.replace(' ', "_");
-    let safe_title = safe_title.replace('(', "_");
-    let safe_title = safe_title.replace(')', "_");
-    let safe_title = safe_title.replace('+', "_");
-    let safe_title = safe_title.replace('&', "_");
-    let safe_title = safe_title.replace('^', "_");
-    let safe_title = safe_title.replace('#', "_");
-    let safe_title = safe_title.replace('@', "_");
-    let safe_title = safe_title.replace('$', "_");
-    let safe_title = safe_title.replace('%', "_");
-    let safe_title = safe_title.replace('=', "_");
-    let safe_title = safe_title.replace("'", "_");
-    let safe_title = safe_title.replace(".", "_");
-    let safe_title = safe_title.replace("__", "_");
-    let safe_title = safe_title.to_lowercase();
+    let safe_title = format_safe_title(&lnk.title);
 
     let mut text: String = format!(
         "title = \"{title}\"
