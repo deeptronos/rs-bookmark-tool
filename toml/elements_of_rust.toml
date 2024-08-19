@@ -1,4 +1,3 @@
-[elements_of_rust]
 title = "Elements of Rust"
 link = "https://github.com/ferrous-systems/elements-of-rust"
 desc = "A collection of software engineering techniques for effectively expressing intent with Rust."

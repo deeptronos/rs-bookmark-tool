@@ -1,4 +1,3 @@
-[50_shades_of_rust,_or_emerging_rust_guis_in_a_wasm_world]
 title = "50 Shades of Rust, or Emerging Rust GUIs in a WASM World"
 link = "https://monadical.com/posts/shades-of-rust-gui-library-list.html"
 desc = "An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications."

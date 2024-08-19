@@ -1,4 +1,3 @@
-[ripgrep_code_review]
 title = "Ripgrep Code Review"
 link = "https://blog.mbrt.dev/posts/ripgrep/"
 desc = "An analysis of the popular 'ripgrep' tool's source code."

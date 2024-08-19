@@ -1,4 +1,3 @@
-[rust_development_at_sentry]
 title = "Rust Development at Sentry"
 link = "https://develop.sentry.dev/rust/"
 desc = "A document containing useful resources for getting started with Rust and adhering to Sentry coding principles."

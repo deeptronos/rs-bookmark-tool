@@ -1,6 +1,5 @@
-[rust_ownership_explained_merging_linked_lists]
 title = "Rust ownership explained: merging linked lists"
 link = "https://www.howtocodeit.com/articles/rust-ownership-explained-linked-lists"
-desc = "How a "simple" linked list coding challenge helps explain Rust's ownership model."
+desc = "How a \"simple\" linked list coding challenge helps explain Rust's ownership model."
 added = "2024-08-07"
 accessed = "2024-08-07"

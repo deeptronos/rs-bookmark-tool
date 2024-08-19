@@ -1,4 +1,3 @@
-[an_overview_of_the_embedded_rust_ecosystem]
 title = "An Overview of the Embedded Rust Ecosystem"
 link = "https://www.youtube.com/watch?v=vLYit_HHPaY"
 desc = "Covers key topics such as embedded_hal, peripheral access crates (PACs), hadware abstraction layers (HALs), and real-time interrupt-driven concurrency(RITC), to help learners begin their embedded Rust journey."

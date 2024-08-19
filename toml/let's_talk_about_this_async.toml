@@ -1,4 +1,3 @@
-[let's_talk_about_this_async]
 title = "Let's talk about this async"
 link = "https://conradludgate.com/posts/async"
 desc = "This is a deep dive into the land of async rust. Get a drink, grab a snack, because this is going to be a long one"

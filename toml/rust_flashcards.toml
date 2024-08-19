@@ -1,4 +1,3 @@
-[rust_flashcards]
 title = "Rust Flashcards"
 link = "https://github.com/ad-si/Rust-Flashcards"
 desc = "Over 550 flashcards to learn Rust from first principles. Written in markdown with script to convert them to an Anki deck or PDF file. - ad-si/Rust-Flashcards"

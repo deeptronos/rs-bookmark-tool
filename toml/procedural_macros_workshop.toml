@@ -1,4 +1,3 @@
-[procedural_macros_workshop]
 title = "Procedural Macros Workshop"
 link = "https://github.com/dtolnay/proc-macro-workshop"
 desc = "A selection of projects designed to learn to write Rust procedural macros."

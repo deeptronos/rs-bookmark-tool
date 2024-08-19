@@ -1,4 +1,3 @@
-[taking_string_arguments_in_rust]
 title = "Taking string arguments in Rust"
 link = "http://xion.io/post/code/rust-string-args.html"
 desc = "Discussing how to avoid subtle issues with string handling and when to use 'str' vs 'String'."

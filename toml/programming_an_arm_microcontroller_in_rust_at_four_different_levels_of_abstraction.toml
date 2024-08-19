@@ -1,4 +1,3 @@
-[programming_an_arm_microcontroller_in_rust_at_four_different_levels_of_abstraction]
 title = "Programming an ARM microcontroller in Rust at four different levels of abstraction"
 link = "https://pramode.in/2018/02/20/programming-a-microcontroller-in-rust-at-four-levels-of-abstraction/"
 desc = "Demonstrates how Rust helps to move from low-level embedded code to high-level abstractions."

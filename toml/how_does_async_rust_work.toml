@@ -1,4 +1,3 @@
-[how_does_async_rust_work]
 title = "How does async Rust work"
 link = "https://bertptrs.nl/2023/04/27/how-does-async-rust-work.html"
 desc = "An in-depth explanation of how asynchronous programming works in Rust, focusing on the Future trait and the executor. Introduces a minimal executor implementation called Beul, which can be useful for testing executor-agnostic async code or working with async libraries in synchronous code."

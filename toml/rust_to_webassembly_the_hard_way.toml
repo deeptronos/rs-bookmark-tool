@@ -1,4 +1,3 @@
-[rust_to_webassembly_the_hard_way]
 title = "Rust to WebAssembly the Hard Way"
 link = "https://surma.dev/things/rust-to-webassembly/"
 desc = "A comprehensive, step-by-styep guide on how to compile Rust code to WebAssembly. Covers topics like exporting functions, memory management, and usage of tools like wasm-bindgen and wasm-pack for optimizing the resulting WebAssembly modules."

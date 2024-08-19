@@ -1,4 +1,3 @@
-[local_async_executors_and_why_they_should_be_the_default]
 title = "Local Async Executors and why They Should be the default"
 link = "https://maciej.codes/2022-06-09-local-async.html"
 desc = "Advocates for the use of local async executors in Rust as a simpler and more performant alternative to the default multi-threaded async programming approach."

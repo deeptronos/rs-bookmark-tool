@@ -1,4 +1,3 @@
-[rayon_data_parallelism_in_rust]
 title = "Rayon: data parallelism in Rust"
 link = "https://smallcultfollowing.com/babysteps/blog/2015/12/18/rayon-data-parallelism-in-rust/"
 desc = "Writing elegant parallel code in Rust."

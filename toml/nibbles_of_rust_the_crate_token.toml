@@ -1,4 +1,3 @@
-[nibbles_of_rust_the_crate_token]
 title = "Nibbles of Rust: The $crate Token"
 link = "https://www.catmonad.xyz/blog/nibbles_03.html"
 desc = "Explains how to use the $crate token to access functions from other crates."

@@ -1,4 +1,3 @@
-[command-line_rust]
 title = "Command-Line Rust"
 link = "https://github.com/kyclark/command-line-rust"
 desc = "Learn the language by writing Rust versions of common Unix coreutils."

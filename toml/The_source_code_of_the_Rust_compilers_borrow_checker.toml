@@ -1,4 +1,3 @@
-[The_source_code_of_the_Rust_compilers_borrow_checker]
 title = "The_source_code_of_the_Rust_compiler's_borrow_checker"
 link = "https://github.com/rust-lang/rust/tree/master/compiler/rustc_borrowck"
 desc = "Browse the inner-workings of Rust'"

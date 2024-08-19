@@ -1,4 +1,3 @@
-[from_unsafe_to_safe__comprehensive_understanding_of_unsafe_rust]
 title = "From Unsafe to Safe | Comprehensive Understanding of Unsafe Rust"
 link = "https://alexzhang-5109.xlog.app/From-Unsafe-To-Safe--Comprehensive-Understanding-of-Unsafe-Rust"
 desc = "A thorough explanation of Unsafe Rust, its necessity, and how to use it safely by maintaining safety and validity invariants."

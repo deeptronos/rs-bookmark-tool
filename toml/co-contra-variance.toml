@@ -1,4 +1,3 @@
-[co-contra-variance]
 title = "Co-Contra-Variance"
 link = "https://gist.github.com/jimblandy/150d110d68aef79739fec83608ebdd93"
 desc = "Explains the concepts of subtyping and type covariance/contravariance."

@@ -1,4 +1,3 @@
-[how-to_compile_rust_faster]
 title = "How-to Compile Rust Faster"
 link = "https://blog.rust.careers/post/compile_rust_faster/"
 desc = "Several tips and techniques to optimize the compilation of Rust projects."

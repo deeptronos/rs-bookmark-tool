@@ -1,4 +1,3 @@
-[effectively_using_iterators_in_rust]
 title = "Effectively Using Iterators In Rust"
 link = "https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html"
 desc = "Explanation of the 'Iter' and 'IntoIter' traits and how loops actually work in Rust."

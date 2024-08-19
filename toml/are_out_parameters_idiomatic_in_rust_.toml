@@ -1,4 +1,3 @@
-[are_out_parameters_idiomatic_in_rust_]
 title = "Are out parameters idiomatic in Rust?"
 link = "https://steveklabnik.com/writing/are-out-parameters-idiomatic-in-rust"
 desc = "Discusses the pros and cons of functions returning a value vs. modifying a parameter in-place."
